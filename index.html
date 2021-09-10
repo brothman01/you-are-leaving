@@ -1,0 +1,118 @@
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#show_warning').click(function() {
+        if (jQuery('#dark').css('display') == 'none') {
+            jQuery('#dark').css('display', 'block');
+            jQuery('#mod').css('display', 'block');
+
+            if (jQuery(window).width() >= 480) {
+                jQuery('html, body').css({
+                    overflow: 'hidden',
+                    height: '100%'
+                });
+            }
+        }
+    });
+
+    $('.btn-warning').click(function() {
+        $('#dark').css('display', 'none');
+        $('html, body').css({
+            overflow: 'auto',
+            height: 'auto'
+        });
+
+        $('#mod').css('display', 'none');
+    });
+    $('.btn-go').click(function() {
+        $('#dark').css('display', 'none');
+        $('#mod').css('display', 'none');
+        document.location = "https://www.google.com";
+    });
+});
+</script>
+<style type="text/css">
+#dark {
+    margin-left: -1000px;
+    margin-top: -1000px;
+    width: 2300px;
+    height: 1105px;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+}
+
+#mod {
+    position: absolute;
+    background: white;
+    border: solid gray 2px;
+    width: 620px;
+    height: 400px;
+    margin-left: 100px;
+    background: white;
+    top: 35%;
+    left: 35%;
+}
+
+#modal_button_div {
+    width: 250px;
+    overflow-y: hidden;
+    bottom: 10%;
+    margin: 0px auto;
+}
+
+#mod h2 {
+    margin-top: 0px;
+    padding: 5px;
+    background: #1C2954;
+    color: white;
+}
+
+#mod p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-go {
+    background: blue;
+    color: white;
+    float: left;
+}
+
+.btn-go:hover {
+    cursor: pointer;
+}
+
+.btn-warning:hover {
+    background-color: #f0ad4e;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 640px) {
+    #dark {
+       margin-top: -1700px;
+    }
+
+    #mod {
+      top: 30%;
+      left: 39%;
+      width: 400px;
+      height: 475px;
+    }
+}
+</style>
+<div id="dark" style="display: none;">
+    <div id="mod" style="display: none;">
+    <h2 style="text-align: center;">You Are Leaving This Website</h2>
+    <p>You are about to leave <strong>*YOUR URL HERE*</strong> for an external website that is not maintained by YOUR COMPANY HERE.</p>
+    <p>Links to external websites are provided as a convenience and should not be construed as an endorsement by the County of Bergen or of the views or products contained therein.&nbsp; If you wish to remain on <strong>www.co.bergen.nj.us</strong> click the "Cancel" button.</p>
+    <p>You are about to visit:<br />checkout.globalgatewaye4.firstdata.com/pay</p>
+    <p>&nbsp;</p>
+    <div id="modal_button_div">
+        <div class="btn-go" style="border-radius: 10px; padding: 9px; font-size: 16px;">Go</div>
+        <div class="btn-warning" style="float: right; border-radius: 10px; padding: 9px; font-size: 16px;">Cancel</div>
+    </div>
+</div>
+</div>
+<p style="text-align: center; font-weight: bold;">To do something, <a id="show_warning" style="padding: 0px; color: blue;" href="javascript:void(0)">Click Here</a></p>
